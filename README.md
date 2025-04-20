@@ -1,24 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Recipe Explorer Lite
+
+This project is a lightweight recipe browsing app built with Next.js 15, TypeScript, Tailwind CSS, and React Query. It allows users to browse a list of recipes, view detailed information, and submit feedback.
+
+## Features
+
+- **Home Page**: Displays a list of recipes fetched from TheMealDB API.
+- **Recipe Detail Page**: Shows detailed information about a selected recipe.
+- **Feedback Form**: Allows users to submit comments on recipes.
+- **Loading and Error States**: Handles data-fetching states gracefully.
 
 ## Getting Started
 
-First, run the development server:
+### Setup Instructions
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd cooking-recipe-app
+   ```
+2. Install dependencies using pnpm:
+   ```bash
+   pnpm install
+   ```
+3. Run the development server:
+   ```bash
+   pnpm dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Data Fetching Approach
+
+- **React Query**: Used for fetching and caching data from TheMealDB API.
+  - `useQuery`: Fetches recipe lists and details.
+  - `useMutation`: Handles feedback submission.
+
+## Folder Structure
+
+- **`src/app`**: Contains the main application files.
+  - **`page.tsx`**: Home page displaying the list of recipes.
+  - **`recipe/[id]/page.tsx`**: Dynamic route for recipe details.
+- **`public`**: Static assets like images.
+
+## Assumptions
+
+- TheMealDB API is used as the data source.
+- Feedback submission is simulated and does not persist data.
 
 ## Learn More
 
@@ -29,8 +57,6 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To deploy the app, use platforms like Vercel. Follow the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
